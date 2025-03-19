@@ -40,7 +40,7 @@ class Addagroproducts(db.Model):
     pid=db.Column(db.Integer,primary_key=True)
     productname=db.Column(db.String(100))
     productdesc=db.Column(db.String(300))
-    price=db.Column(db.Integer)
+    price=db.Column(db.String(50))
 
 
 
@@ -85,6 +85,7 @@ def agroproducts():
     # query=db.engine.execute(f"SELECT * FROM `addagroproducts`") 
     query=Addagroproducts.query.all()
     return render_template('agroproducts.html',query=query)
+
 
 @app.route('/addagroproduct',methods=['POST','GET'])
 @login_required

@@ -33,7 +33,7 @@ CREATE TABLE `addagroproducts` (
   `pid` int(11) NOT NULL,
   `productname` varchar(100) NOT NULL,
   `productdesc` text NOT NULL,
-  `price` int(100) NOT NULL
+  `price` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -140,6 +140,21 @@ INSERT INTO `trig` (`id`, `fid`, `action`, `timestamp`) VALUES
 (4, '8', 'FARMER UPDATED', '2021-01-19 23:17:17'),
 (5, '8', 'FARMER DELETED', '2021-01-19 23:18:54');
 
+---------------------------------------------------
+CREATE TABLE `paym` (
+  `id` int(11) NOT NULL,
+  `pid` varchar(50) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `pamt` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `paym` (`id`, `pid`, `fname`, `pamt`) VALUES
+(1, '2', 'Ayesha', '45'),
+(2, '2', 'amna', '56'),
+(3, '8', 'asf', '67'),
+(4, '8', 'awsedr', '78'),
+(5, '8', 'zsxdcf', '89');
+
 -- --------------------------------------------------------
 
 --
@@ -192,6 +207,9 @@ ALTER TABLE `test`
 -- Indexes for table `trig`
 --
 ALTER TABLE `trig`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `pay`
   ADD PRIMARY KEY (`id`);
 
 --
